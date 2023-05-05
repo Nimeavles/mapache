@@ -1,6 +1,6 @@
 project(mapache CXX)
 
-set(BOOST_ROOT "lib/boost_1_62_0")
+set(BOOST_ROOT "lib/boost_1_82_0")
 find_package(Boost 1.62 REQUIRED)
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
