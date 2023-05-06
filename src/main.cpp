@@ -20,15 +20,16 @@
    IN THE SOFTWARE.
 */
 
-#include "errors.h"
+#include "./core/errors.h"
+#include "./utils/json_parser.h"
 #include <netinet/in.h>
 #include <sys/socket.h>
 
 #define IP4 0
 
 typedef u_int8_t u8;
-
 typedef struct sockaddr_in sockaddr_in;
+
 typedef struct server_socket_state {
   u_int port, socket, client_socket;
   sockaddr_in address;
@@ -76,10 +77,7 @@ static int open_server_socket() {
   return NO_ERROR_EXIT;
 }
 
-int main() {
-	int err;
-
-  if ((err = open_server_socket()) != 0) {
-    return err;
-  };
+int main(int argc, char *argv[]) {
+  config_data data_from_config_file;
+  read_json_config_file(argv[argc - 1], &data_from_config_file);
 }
