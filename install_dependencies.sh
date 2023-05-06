@@ -12,14 +12,13 @@ fi
 
 echo "Downloading dependencies ..."
 
-wget https://boostorg.jfrog.io/artifactory/main/release/1.82.0/source/boost_1_82_0.tar.gz -O /tmp/boost_1_82_0.tar.gz > /dev/null 2>&1 &
+wget https://boostorg.jfrog.io/artifactory/main/release/1.68.0/source/boost_1_68_0.tar.gz -O /tmp/boost_1_68_0.tar.gz > /dev/null 2>&1 &
 
 if [ ! -d "lib" ]; then
   mkdir lib
 fi
-cd lib
 
-tar -xf /tmp/boost_1_82_0.tar.gz > /dev/null 2>&1 &
+tar -xf /tmp/boost_1_68_0.tar.gz --directory=lib/ > /dev/null 2>&1 &
 
 wait
 echo -e "\033[32mTerminado con éxito\033[0m"
