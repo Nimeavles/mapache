@@ -20,16 +20,19 @@
    IN THE SOFTWARE.
 */
 
-#include "config_file.hpp"
-#include <iostream>
+/*
+    Exit errors defined when setting up a socket.
+*/
 
-namespace pt = boost::property_tree;
+#pragma once
 
-pt::ptree root;
-
-void read_json_config_file(const std::string &filename,
-                           config_data *config_data_struct) {
-  pt::read_json(filename, root);
-  config_data_struct->port = root.get<int>("port", 80);
-  config_data_struct->host = root.get<std::string>("host", "127.0.0.1");
-}
+#define NO_ERROR_EXIT 0
+// Socket errors
+#define SOCK_CREATE_ERR 1
+#define SOCK_SETSOCKOPT_ERR 2
+#define SOCK_BIND_ERR 3
+#define SOCK_LISTEN_ERR 4
+#define SOCK_ACCEPT_ERR 5
+// Epoll errors
+#define EPOLL_CREATE_ERR 6
+#define EPOLL_ADD_ERR 7
