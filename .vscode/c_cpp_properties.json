@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/lib/boost_1_68_0"
+                "${workspaceFolder}/lib/boost_1_68_0",
+                "${workspaceFolder}/build/_deps/googletest-src/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
