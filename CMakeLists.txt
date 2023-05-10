@@ -27,7 +27,7 @@ set (LIBRARY_FILES
     src/core/server/server.cpp
 )
 
-include_directories(${CMAKE_SOURCE_DIR}/src/**)
+include_directories(${CMAKE_SOURCE_DIR}/src/**/*)
 
 add_executable(${BINARY} ${BINARY_FILES})
 add_library(${BINARY}_lib STATIC ${LIBRARY_FILES})
@@ -41,6 +41,7 @@ set(TEST_BINARY ${CMAKE_PROJECT_NAME}_tests)
 set (TEST_FILES
   tests/health_checkup.cpp
   tests/read_config_test.cpp
+  tests/server_test.cpp
 )
 
 include(FetchContent)
