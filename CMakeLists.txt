@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 project(mapache CXX)
 
-set(BOOST_ROOT "lib/boost_1_68_0")
+set(BOOST_ROOT "lib/boost_1_69_0")
 find_package(Boost 1.68 REQUIRED)
 
 set(CMAKE_CXX_STANDARD 14)
