@@ -15,7 +15,7 @@ bool check_if_port_is_being_used(int port) {
   tcp::acceptor a(svc);
 
   boost::system::error_code ec;
-  a.open(tcp::v4(), ec) || a.bind({tcp::v4(), (unsigned int)port}, ec);
+  a.open(tcp::v4(), ec) || a.bind({tcp::v4(), (short unsigned int)port}, ec);
 
   return ec == error::address_in_use;
 }
